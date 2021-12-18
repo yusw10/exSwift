@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "6B858686-1356-4F65-91C8-9D4E0FFAE1DD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9605B867-6C2A-4439-9082-31D847B7632A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AutoLayoutExample/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9605B867-6C2A-4439-9082-31D847B7632A - c0080e960d13f990"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AutoLayoutExample.ViewController.colorView.getter : Swift.Optional&lt;__C.UIView&gt;"
+                  moduleName = "AutoLayoutExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hs/Desktop/Example/AutoLayoutExample/AutoLayoutExample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "9605B867-6C2A-4439-9082-31D847B7632A - 3221b1ea0ac351a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AutoLayoutExample.ViewController.colorView.setter : Swift.Optional&lt;__C.UIView&gt;"
+                  moduleName = "AutoLayoutExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hs/Desktop/Example/AutoLayoutExample/AutoLayoutExample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "9605B867-6C2A-4439-9082-31D847B7632A - e041c123140900e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AutoLayoutExample.ViewController.colorView.modify : Swift.Optional&lt;__C.UIView&gt;"
+                  moduleName = "AutoLayoutExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hs/Desktop/Example/AutoLayoutExample/AutoLayoutExample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "9605B867-6C2A-4439-9082-31D847B7632A - 84f49c3250751cef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AutoLayoutExample.ViewController.colorView.modify : Swift.Optional&lt;__C.UIView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "AutoLayoutExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hs/Desktop/Example/AutoLayoutExample/AutoLayoutExample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "9605B867-6C2A-4439-9082-31D847B7632A - e35b99f40b11a186"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AutoLayoutExample.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; AutoLayoutExample.ViewController"
+                  moduleName = "AutoLayoutExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hs/Desktop/Example/AutoLayoutExample/AutoLayoutExample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "121">
+               </Location>
+               <Location
+                  uuid = "9605B867-6C2A-4439-9082-31D847B7632A - b9bc959a0630267c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AutoLayoutExample.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;AutoLayoutExample.ViewController&gt;"
+                  moduleName = "AutoLayoutExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hs/Desktop/Example/AutoLayoutExample/AutoLayoutExample/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
