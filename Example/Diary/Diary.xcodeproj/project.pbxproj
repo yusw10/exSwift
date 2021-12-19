@@ -18,6 +18,7 @@
 		459615EF2769EFE3003AB2F1 /* StarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459615EE2769EFE3003AB2F1 /* StarCell.swift */; };
 		459615F12769F6A5003AB2F1 /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459615F02769F6A5003AB2F1 /* WriteDiaryViewController.swift */; };
 		459615F32769F71D003AB2F1 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459615F22769F71D003AB2F1 /* DiaryDetailViewController.swift */; };
+		459615F5276F2CA0003AB2F1 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459615F4276F2CA0003AB2F1 /* Diary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		459615EE2769EFE3003AB2F1 /* StarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarCell.swift; sourceTree = "<group>"; };
 		459615F02769F6A5003AB2F1 /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
 		459615F22769F71D003AB2F1 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
+		459615F4276F2CA0003AB2F1 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				459615EE2769EFE3003AB2F1 /* StarCell.swift */,
 				459615F02769F6A5003AB2F1 /* WriteDiaryViewController.swift */,
 				459615F22769F71D003AB2F1 /* DiaryDetailViewController.swift */,
+				459615F4276F2CA0003AB2F1 /* Diary.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				459615EF2769EFE3003AB2F1 /* StarCell.swift in Sources */,
 				459615D72769E093003AB2F1 /* AppDelegate.swift in Sources */,
 				459615D92769E093003AB2F1 /* SceneDelegate.swift in Sources */,
+				459615F5276F2CA0003AB2F1 /* Diary.swift in Sources */,
 				459615F32769F71D003AB2F1 /* DiaryDetailViewController.swift in Sources */,
 				459615EB2769E3EC003AB2F1 /* DiaryCell.swift in Sources */,
 				459615ED2769EE93003AB2F1 /* StarViewController.swift in Sources */,
@@ -237,7 +241,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -292,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
