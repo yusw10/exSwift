@@ -10,7 +10,10 @@ import UIKit
 protocol WriteDiaryViewDelegate:AnyObject{
     func didSelectRegister(diary: Diary)
 }
-
+enum DiaryEditorMode{
+    case new
+    case edit(IndexPath, Diary)
+}
 class WriteDiaryViewController: UIViewController {
     @IBOutlet var confirmButton: UIBarButtonItem!
     @IBOutlet var dateTextField: UITextField!
@@ -19,15 +22,18 @@ class WriteDiaryViewController: UIViewController {
     
     weak var delegate: WriteDiaryViewDelegate?
     
+    var diaryEditorMode: DiaryEditorMode = .new
+    
     private let datePicker = UIDatePicker()
     private var diaryDate: Date?
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        configureContentsTextView()
-        configureDatePicker()
         self.confirmButton.isEnabled = false
-        configureInputField()
+        self.configureContentsTextView()
+        self.configureDatePicker()
+        self.configureInputField()
+        self.configureEditMode()
     }
   
     @IBAction func tapConfirmButton(_ sender: UIBarButtonItem) {
@@ -35,6 +41,22 @@ class WriteDiaryViewController: UIViewController {
         guard let contents = self.contentsTextView.text else {return}
         guard let date = self.diaryDate else {return}
         let diary = Diary(title: title, contents: contents, date: date, isStar: false)
+        
+        //수정된 내용을 전달하는 notification 객체를 전달
+
+        switch self.diaryEditorMode{
+        case .new:
+            self.delegate?.didSelectRegister(diary: diary)
+        case let .edit(indexPath, _):
+            NotificationCenter.default.post(
+                name: NSNotification.Name("editDiary"),
+                object: diary,
+                userInfo: [
+                    "indexPath.row": indexPath.row
+                ])
+            
+        }
+        
         self.delegate?.didSelectRegister(diary: diary)
         self.navigationController?.popViewController(animated: true)
     }
@@ -81,6 +103,25 @@ class WriteDiaryViewController: UIViewController {
     
     private func validateInputField(){
         self.confirmButton.isEnabled = !(self.titleTextField.text?.isEmpty ?? true) && !(self.dateTextField.text?.isEmpty ?? true) && !self.contentsTextView.text.isEmpty
+    }
+    
+    private func configureEditMode(){
+        switch self.diaryEditorMode{
+        case let .edit(_, diary):
+            self.titleTextField.text = diary.title
+            self.contentsTextView.text = diary.contents
+            self.dateTextField.text = self.dateToString(date: diary.date)
+            self.diaryDate = diary.date
+            self.confirmButton.title = "수정"
+        default:
+            break
+        }
+    }
+    private func dateToString(date:Date) -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy년 MM월 dd일(EEEEE)"
+        formatter.locale = Locale(identifier: "ko_KR")
+        return formatter.string(from: date)
     }
 }
 
