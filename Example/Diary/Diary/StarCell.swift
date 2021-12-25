@@ -12,3 +12,4 @@ class StarCell: UICollectionViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
 }
+
