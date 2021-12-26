@@ -12,4 +12,11 @@ struct Diary{
     var contents: String
     var date: Date
     var isStar: Bool
+    func selfDebug(){
+        debugPrint("asdasdasd")
+        debugPrint("title=> \(self.title)")
+        debugPrint("contents=> \(self.contents)")
+        debugPrint("date=> \(self.date.description)")
+        debugPrint("isStar=> \(self.isStar)")
+    }
 }
