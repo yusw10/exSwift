@@ -26,17 +26,50 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.configureCollectionView()
         self.loadDiaryList()
+        
+        
+       
+//        guard let result = diaryList.firstIndex(where : { $0.uuidString == "bbb3" }) else { return }
+//        print(result)
+//
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(editDiaryNotification(_:)),
             name: NSNotification.Name("editDiary"),
             object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(starDiaryNotification(_:)),
+            name: NSNotification.Name("starDiary"),
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(deleteDiaryNotification(_:)),
+            name: NSNotification.Name("deleteDiary"),
+            object: nil
+        )
         // Do any additional setup after loading the view.
+    }
+    @objc func deleteDiaryNotification(_ notification: Notification){
+        guard let uuidString = notification.object as? String else { return }
+        guard let index = self.diaryList.firstIndex(where: {$0.uuidString == uuidString}) else{ return }
+        self.diaryList.remove(at: index)
+        self.collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
+    }
+    
+    @objc func starDiaryNotification(_ notification: Notification){
+        guard let starDiary = notification.object as? [String:Any] else {return}
+        guard let isStar = starDiary["isStar"] as? Bool else { return }
+        guard let uuidString = starDiary["uuidString"] as? String else { return }
+        guard let index = self.diaryList.firstIndex(where: {$0.uuidString == uuidString}) else{ return }
+        self.diaryList[index].isStar = isStar
     }
     @objc func editDiaryNotification(_ notification: Notification){
         guard let diary = notification.object as? Diary else {return}
-        guard let row = notification.userInfo?["indexPath.row"] as? Int else {return}
-        self.diaryList[row] = diary
+        guard let index = self.diaryList.firstIndex(where: {$0.uuidString == diary.uuidString}) else{ return }
+        self.diaryList[index] = diary
         self.diaryList = self.diaryList.sorted(by: {
             $0.date.compare($1.date) == .orderedDescending
         })
@@ -62,7 +95,8 @@ class ViewController: UIViewController {
                 "title":$0.title,
                 "contents":$0.contents,
                 "date":$0.date,
-                "isStar":$0.isStar
+                "isStar":$0.isStar,
+                "uuidString": $0.uuidString
             ]
         }
         let userDefaults = UserDefaults.standard
@@ -77,7 +111,8 @@ class ViewController: UIViewController {
             guard let contents = $0["contents"] as? String else { return nil}
             guard let date = $0["date"] as? Date else { return nil}
             guard let isStar = $0["isStar"] as? Bool else { return nil}
-            return Diary(title: title, contents: contents, date: date, isStar: isStar)
+            guard let uuidString = $0["uuidString"] as? String else { return nil}
+            return Diary(uuidString: uuidString, title: title, contents: contents, date: date, isStar: isStar)
         }
         self.diaryList = self.diaryList.sorted(by:{
             $0.date.compare($1.date) == .orderedDescending
@@ -125,17 +160,7 @@ extension ViewController: UICollectionViewDelegate{
         let diary = self.diaryList[indexPath.row]
         viewController.diary = diary
         viewController.indexPath = indexPath
-        viewController.delegate = self
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
-extension ViewController: DiaryDetailViewDelegate{
-    func didSelectDelete(indexPath: IndexPath) {
-        self.diaryList.remove(at: indexPath.row)
-        self.collectionView.deleteItems(at: [indexPath])
-    }
-    func didSelectStar(indexPath: IndexPath, isStar: Bool) {
-        self.diaryList[indexPath.row].isStar = isStar
-    }
-}
