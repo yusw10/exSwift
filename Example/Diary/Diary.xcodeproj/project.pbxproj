@@ -71,15 +71,15 @@
 				459615D62769E093003AB2F1 /* AppDelegate.swift */,
 				459615D82769E093003AB2F1 /* SceneDelegate.swift */,
 				459615DA2769E093003AB2F1 /* ViewController.swift */,
+				459615EC2769EE93003AB2F1 /* StarViewController.swift */,
+				459615F22769F71D003AB2F1 /* DiaryDetailViewController.swift */,
+				459615F02769F6A5003AB2F1 /* WriteDiaryViewController.swift */,
 				459615DC2769E093003AB2F1 /* Main.storyboard */,
 				459615DF2769E095003AB2F1 /* Assets.xcassets */,
 				459615E12769E095003AB2F1 /* LaunchScreen.storyboard */,
 				459615E42769E095003AB2F1 /* Info.plist */,
 				459615EA2769E3EC003AB2F1 /* DiaryCell.swift */,
-				459615EC2769EE93003AB2F1 /* StarViewController.swift */,
 				459615EE2769EFE3003AB2F1 /* StarCell.swift */,
-				459615F02769F6A5003AB2F1 /* WriteDiaryViewController.swift */,
-				459615F22769F71D003AB2F1 /* DiaryDetailViewController.swift */,
 				459615F4276F2CA0003AB2F1 /* Diary.swift */,
 			);
 			path = Diary;
