@@ -1,0 +1,37 @@
+1. Session Configuration 을 결정하고, Session 을 생성
+
+    let session = URLSession(configuration: .default) // basic seesion type
+
+
+2. 통신할 URL과 Request 객체를 설정
+
+	guard let url = URL(
+            string: "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=1ce2b4a13210e20bb57fdf19ef6994da"
+        ) else { return }
+
+3. 사용할 Task 를 결정하고 그에 맞는 Completion Handler 나 Delegate 메소드들을 작성
+4. 해당Task를실행
+
+	session.dataTask(with: url, completionHandler: { [weak self] data, response, error in
+            let successRange = (200..<300)
+            guard let data = data, error == nil else { return }
+            let decoder = JSONDecoder()
+            if let response = response as? HTTPURLResponse, successRange.contains(response.statusCode){
+                guard let weatherInformation = try? decoder.decode(WeatherInformation.self, from: data) else { return }
+                DispatchQueue.main.async {
+                    self?.weatherStackView.isHidden = false
+                    self?.configureView(weatherInformation: weatherInformation)
+                }
+            }else{
+                guard let errorMessage = try? decoder.decode(ErrorMessage.self, from: data) else { return }
+                DispatchQueue.main.async {
+                    self?.showAlert(message: errorMessage.message)
+                }
+            }
+        }).resume()
+>> Completion 핸들러는 항상 3개의 파라미터를 받는다.
+>> 데이터는 항상 "보낼때는 인코딩", "받을 때는 디코딩", 그리고 이러한 데이터의 흐름에선 Codable 프로토콜을 채택한 객체로 주고받는다.
+>> try?로 하는 이유는 객체가 오지 않는 경우를 대비
+>> 메인 스레드에서 동시에 보여주려면 Disfetch.main.async 를 활용 >>> 4가지 경우를 모두 공부하도록 하자
+
+5. Task 완료 후 Completion Handler 클로저가 호출이 됨
