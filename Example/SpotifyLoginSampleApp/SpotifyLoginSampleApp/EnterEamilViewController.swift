@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import FirebaseAuth
 
 class EnterEmailViewController: UIViewController{
     @IBOutlet weak var nextButton: UIButton!
@@ -30,6 +31,24 @@ class EnterEmailViewController: UIViewController{
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
+        //Firebase email, password authentification
+        let email = self.emailTextField.text ?? ""
+        let password = self.passwordTextField.text ?? ""
+        
+        //신규 사용자 생성
+        debugPrint("before create user")
+        Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult , erorr in
+            guard let self = self else { return }
+            debugPrint("inner Auth.auth / before showMainViewController func")
+            self.showMainViewController()  
+        }
+    }
+    private func showMainViewController(){
+        debugPrint("Do showMainViewController method")
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        mainViewController.modalPresentationStyle = .fullScreen
+        navigationController?.show(mainViewController, sender: nil)
     }
 }
 
