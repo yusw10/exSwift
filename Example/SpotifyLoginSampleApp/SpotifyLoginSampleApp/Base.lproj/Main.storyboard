@@ -243,7 +243,7 @@
                                     <color key="titleColor" systemColor="systemGray5Color"/>
                                 </state>
                                 <connections>
-                                    <action selector="logoutButtonTapped:" destination="h6Y-4q-40O" eventType="touchUpInside" id="aI5-aT-DPn"/>
+                                    <action selector="logoutButtonTapped:" destination="h6Y-4q-40O" eventType="touchUpInside" id="1S5-Bq-8Ol"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -257,7 +257,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="welcomeLabel" destination="Lil-To-F70" id="nxk-9f-qly"/>
+                        <outlet property="welcomeLabel" destination="Lil-To-F70" id="WTO-mY-Pno"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAz-7A-foY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

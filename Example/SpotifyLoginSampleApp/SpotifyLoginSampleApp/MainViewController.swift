@@ -9,7 +9,9 @@ import UIKit
 import FirebaseAuth
  
 class MainViewController: UIViewController{
+    //@IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var welcomeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,4 +32,5 @@ class MainViewController: UIViewController{
         self.navigationController?.popToRootViewController(animated: true)
         
     }
+    
 }

@@ -25,9 +25,11 @@ class EnterEmailViewController: UIViewController{
         super.viewDidLoad()
         self.nextButton.layer.cornerRadius = 30
         self.nextButton.isEnabled = false
+        self.nextButton.alpha = 0
         emailTextField.delegate = self
         passwordTextField.delegate = self
         emailTextField.becomeFirstResponder()
+        print("complete ViewdidLoad")
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -36,7 +38,8 @@ class EnterEmailViewController: UIViewController{
         let password = self.passwordTextField.text ?? ""
         
         //신규 사용자 생성
-        debugPrint("before create user")
+        
+        print("before create user")
         Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult , erorr in
             guard let self = self else { return }
             debugPrint("inner Auth.auth / before showMainViewController func")
@@ -46,8 +49,11 @@ class EnterEmailViewController: UIViewController{
     private func showMainViewController(){
         debugPrint("Do showMainViewController method")
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        debugPrint("Do showMainViewController method - setting storyboard parameter")
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        debugPrint("Do showMainViewController method - setting mainviewController parameter")
         mainViewController.modalPresentationStyle = .fullScreen
+        debugPrint("Do showMainViewController method - setting modalPresentation style")
         navigationController?.show(mainViewController, sender: nil)
     }
 }
@@ -61,5 +67,8 @@ extension EnterEmailViewController:UITextFieldDelegate{
         let isEmailEmpty = emailTextField.text == ""
         let isPasswordEmpty = passwordTextField.text == ""
         nextButton.isEnabled = !isEmailEmpty && !isPasswordEmpty
+        if nextButton.isEnabled {
+            nextButton.alpha = 1
+        }
     }
 }

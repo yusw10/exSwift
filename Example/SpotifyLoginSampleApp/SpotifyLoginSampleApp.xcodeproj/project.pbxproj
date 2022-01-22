@@ -16,7 +16,7 @@
 		45CA19872792A18D001D22F0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA19862792A18D001D22F0 /* LoginViewController.swift */; };
 		45CA19892792ACE8001D22F0 /* EnterEamilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA19882792ACE8001D22F0 /* EnterEamilViewController.swift */; };
 		45CA198B27953256001D22F0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA198A27953256001D22F0 /* MainViewController.swift */; };
-		45CA198F27955D84001D22F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45CA198E27955D84001D22F0 /* GoogleService-Info.plist */; };
+		45CA1991279C2BF2001D22F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45CA1990279C2BF2001D22F0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +30,7 @@
 		45CA19862792A18D001D22F0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		45CA19882792ACE8001D22F0 /* EnterEamilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterEamilViewController.swift; sourceTree = "<group>"; };
 		45CA198A27953256001D22F0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		45CA198E27955D84001D22F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45CA1990279C2BF2001D22F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../API_KEY/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		494FDA7BF66732A69BD1C4B2 /* Pods_SpotifyLoginSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotifyLoginSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6868C5EBD6DF96502712EC2D /* Pods-SpotifyLoginSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyLoginSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-SpotifyLoginSampleApp/Pods-SpotifyLoginSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		765E8242947E3BF93D76310F /* Pods-SpotifyLoginSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotifyLoginSampleApp.release.xcconfig"; path = "Target Support Files/Pods-SpotifyLoginSampleApp/Pods-SpotifyLoginSampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 				45CA197B2792A13E001D22F0 /* Assets.xcassets */,
 				45CA197D2792A13E001D22F0 /* LaunchScreen.storyboard */,
 				45CA19802792A13E001D22F0 /* Info.plist */,
-				45CA198E27955D84001D22F0 /* GoogleService-Info.plist */,
+				45CA1990279C2BF2001D22F0 /* GoogleService-Info.plist */,
 			);
 			path = SpotifyLoginSampleApp;
 			sourceTree = "<group>";
@@ -161,7 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45CA197F2792A13E001D22F0 /* LaunchScreen.storyboard in Resources */,
-				45CA198F27955D84001D22F0 /* GoogleService-Info.plist in Resources */,
+				45CA1991279C2BF2001D22F0 /* GoogleService-Info.plist in Resources */,
 				45CA197C2792A13E001D22F0 /* Assets.xcassets in Resources */,
 				45CA197A2792A13C001D22F0 /* Main.storyboard in Resources */,
 			);
