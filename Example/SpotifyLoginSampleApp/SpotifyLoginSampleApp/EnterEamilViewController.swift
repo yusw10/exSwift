@@ -40,20 +40,37 @@ class EnterEmailViewController: UIViewController{
         //신규 사용자 생성
         
         print("before create user")
-        Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult , erorr in
+        Auth.auth().createUser(withEmail: email, password: password) {[weak self] authResult , error in
             guard let self = self else { return }
-            debugPrint("inner Auth.auth / before showMainViewController func")
-            self.showMainViewController()  
+            
+            if let error = error {
+                let code = (error as NSError).code
+                switch code {
+                case 17007: // 이미 가입한 계정
+                    self.loginUser(withEmail: email, password: password)
+                default:
+                    self.errorMessageLabel.text = error.localizedDescription
+                }
+            }else{
+                self.showMainViewController()
+            }
+            
+        }
+    }
+    private func loginUser(withEmail email: String, password: String){
+        Auth.auth().signIn(withEmail: email, password: password){ [weak self] _ , error in
+            guard let self = self else { return }
+            if let error = error {
+                self.errorMessageLabel.text = error.localizedDescription
+            }else{
+                self.showMainViewController()
+            }
         }
     }
     private func showMainViewController(){
-        debugPrint("Do showMainViewController method")
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        debugPrint("Do showMainViewController method - setting storyboard parameter")
         let mainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-        debugPrint("Do showMainViewController method - setting mainviewController parameter")
         mainViewController.modalPresentationStyle = .fullScreen
-        debugPrint("Do showMainViewController method - setting modalPresentation style")
         navigationController?.show(mainViewController, sender: nil)
     }
 }

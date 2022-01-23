@@ -224,40 +224,40 @@
         <!--Main View Controller-->
         <scene sceneID="AvS-eM-dZI">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="h6Y-4q-40O" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="h6Y-4q-40O" customClass="MainViewController" customModule="SpotifyLoginSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z3o-Zh-JkQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환영합니다" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lil-To-F70">
-                                <rect key="frame" x="142" y="435" width="130" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="환영합니다" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRc-4H-pA1">
+                                <rect key="frame" x="157.5" y="348.5" width="99.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-Jp-yUf">
-                                <rect key="frame" x="158.5" y="501" width="97" height="46"/>
+                                <rect key="frame" x="158.5" y="412.5" width="97" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="로그아웃">
                                     <color key="titleColor" systemColor="systemGray5Color"/>
                                 </state>
                                 <connections>
-                                    <action selector="logoutButtonTapped:" destination="h6Y-4q-40O" eventType="touchUpInside" id="1S5-Bq-8Ol"/>
+                                    <action selector="logoutButtonTapped:" destination="h6Y-4q-40O" eventType="touchUpInside" id="JWj-Pz-K3T"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ODB-FT-civ"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="7cj-Jp-yUf" firstAttribute="centerX" secondItem="ODB-FT-civ" secondAttribute="centerX" id="5dR-PG-bxn"/>
-                            <constraint firstItem="Lil-To-F70" firstAttribute="centerX" secondItem="ODB-FT-civ" secondAttribute="centerX" id="MmL-to-q3R"/>
-                            <constraint firstItem="Lil-To-F70" firstAttribute="centerY" secondItem="ODB-FT-civ" secondAttribute="centerY" id="jfn-Gz-90d"/>
-                            <constraint firstItem="7cj-Jp-yUf" firstAttribute="top" secondItem="Lil-To-F70" secondAttribute="bottom" constant="30" id="r5r-LD-PqJ"/>
+                            <constraint firstItem="7cj-Jp-yUf" firstAttribute="centerX" secondItem="tRc-4H-pA1" secondAttribute="centerX" id="8OJ-2Y-Rrc"/>
+                            <constraint firstItem="7cj-Jp-yUf" firstAttribute="top" secondItem="tRc-4H-pA1" secondAttribute="bottom" constant="36.5" id="Gzu-52-ROM"/>
+                            <constraint firstItem="tRc-4H-pA1" firstAttribute="centerY" secondItem="ODB-FT-civ" secondAttribute="centerY" multiplier="4/5" id="YUI-8P-Pck"/>
+                            <constraint firstItem="tRc-4H-pA1" firstAttribute="centerX" secondItem="ODB-FT-civ" secondAttribute="centerX" id="a97-d0-Hs7"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="welcomeLabel" destination="Lil-To-F70" id="WTO-mY-Pno"/>
+                        <outlet property="welcomeLabel" destination="tRc-4H-pA1" id="atf-I7-x0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAz-7A-foY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
