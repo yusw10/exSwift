@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hnq-Xv-Vv3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -235,8 +234,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYb-lM-Vca">
+                                <rect key="frame" x="152.5" y="396" width="109" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="비밀번호 변경">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPaswordButtonTapped:" destination="h6Y-4q-40O" eventType="touchUpInside" id="yNU-Gv-UA9"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cj-Jp-yUf">
-                                <rect key="frame" x="158.5" y="412.5" width="97" height="46"/>
+                                <rect key="frame" x="158.5" y="462" width="97" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="로그아웃">
@@ -251,12 +261,15 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7cj-Jp-yUf" firstAttribute="centerX" secondItem="tRc-4H-pA1" secondAttribute="centerX" id="8OJ-2Y-Rrc"/>
-                            <constraint firstItem="7cj-Jp-yUf" firstAttribute="top" secondItem="tRc-4H-pA1" secondAttribute="bottom" constant="36.5" id="Gzu-52-ROM"/>
+                            <constraint firstItem="sYb-lM-Vca" firstAttribute="centerX" secondItem="ODB-FT-civ" secondAttribute="centerX" id="Oj9-EE-zgw"/>
+                            <constraint firstItem="sYb-lM-Vca" firstAttribute="top" secondItem="tRc-4H-pA1" secondAttribute="bottom" constant="20" id="Pd8-bb-xCJ"/>
+                            <constraint firstItem="7cj-Jp-yUf" firstAttribute="top" secondItem="sYb-lM-Vca" secondAttribute="bottom" constant="30" id="Vdk-0w-jbP"/>
                             <constraint firstItem="tRc-4H-pA1" firstAttribute="centerY" secondItem="ODB-FT-civ" secondAttribute="centerY" multiplier="4/5" id="YUI-8P-Pck"/>
                             <constraint firstItem="tRc-4H-pA1" firstAttribute="centerX" secondItem="ODB-FT-civ" secondAttribute="centerX" id="a97-d0-Hs7"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="resetPasswordButton" destination="sYb-lM-Vca" id="Smi-RZ-aU3"/>
                         <outlet property="welcomeLabel" destination="tRc-4H-pA1" id="atf-I7-x0h"/>
                     </connections>
                 </viewController>
