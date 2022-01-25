@@ -8,6 +8,8 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,11 +19,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-       
+        KakaoSDK.initSDK(appKey: "245b5b28e921ae61fd753a8f6d51a833")
+        //KakaoSDK.initSDK(appKey: "{NATIVE_APP_KEY}")
+        
         return true
     }
-
+    //KAKAO Login Handle
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+//                return AuthController.handleOpenUrl(url: url)
+//            }
+//
+//            return false
+//    }
+//
+    //Google login handle
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        if (AuthApi.isKakaoTalkLoginUrl(url)) {
+//            return AuthController.handleOpenUrl(url: url)
+//        }
         return GIDSignIn.sharedInstance.handle(url)
     }
     // MARK: UISceneSession Lifecycle

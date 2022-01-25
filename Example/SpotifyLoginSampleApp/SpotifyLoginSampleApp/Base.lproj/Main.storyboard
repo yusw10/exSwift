@@ -54,7 +54,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7nk-WF-gUW">
-                                <rect key="frame" x="30" y="440.5" width="354" height="210"/>
+                                <rect key="frame" x="30" y="400.5" width="354" height="285"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMa-4i-ZiX">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="60"/>
@@ -100,6 +100,17 @@
                                             <action selector="appleLoginButtonTapped:" destination="tHh-GU-682" eventType="touchUpInside" id="3bA-Dg-wAn"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fe1-j2-gnA">
+                                        <rect key="frame" x="112.5" y="225" width="129" height="60"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="카카오로 계속하기">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="kakaoLoginButtonTapped:" destination="tHh-GU-682" eventType="touchUpInside" id="QET-Ju-2d1"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="5Mb-Nc-sdW" secondAttribute="trailing" id="JSw-Ui-SUt"/>
@@ -115,7 +126,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3EH-sP-WsH" firstAttribute="centerY" secondItem="zWL-VI-hPN" secondAttribute="centerY" multiplier="3/5" id="IaG-Lf-beg"/>
-                            <constraint firstItem="7nk-WF-gUW" firstAttribute="top" secondItem="3EH-sP-WsH" secondAttribute="bottom" constant="60" id="Kkk-kv-9tv"/>
+                            <constraint firstItem="7nk-WF-gUW" firstAttribute="top" secondItem="3EH-sP-WsH" secondAttribute="bottom" constant="20" id="Kkk-kv-9tv"/>
                             <constraint firstItem="3EH-sP-WsH" firstAttribute="centerX" secondItem="zWL-VI-hPN" secondAttribute="centerX" id="P3y-zd-kMs"/>
                             <constraint firstItem="7nk-WF-gUW" firstAttribute="centerX" secondItem="zWL-VI-hPN" secondAttribute="centerX" id="U1v-Yy-ocA"/>
                             <constraint firstItem="7nk-WF-gUW" firstAttribute="leading" secondItem="zWL-VI-hPN" secondAttribute="leading" constant="30" id="nLd-vr-zyq"/>
@@ -127,6 +138,7 @@
                         <outlet property="appleLoginButton" destination="5Mb-Nc-sdW" id="ZdM-3k-sJ9"/>
                         <outlet property="emailLoginButton" destination="mMa-4i-ZiX" id="zPy-je-sPi"/>
                         <outlet property="googleLoginButton" destination="p1l-RM-Y59" id="05Z-aY-PmW"/>
+                        <outlet property="kakaoLoginButton" destination="fe1-j2-gnA" id="l4L-ud-XJG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bU-RP-UHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
