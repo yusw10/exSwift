@@ -15,6 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        Installations.installations().authTokenForcingRefresh(true, completion: { result, error in
+            if let error = error {
+                print("error")
+                return
+            }
+            guard let result = result else {
+                return
+            }
+            print("INSTALLATION AUTH TOKEN : \(result.authToken)")
+        })
         return true
     }
 
