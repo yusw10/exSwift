@@ -31,7 +31,7 @@
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5W-q6-D2Y">
                         <rect key="frame" x="306" y="24.5" width="51" height="31"/>
                         <connections>
-                            <action selector="alertSwitchValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Mzt-LY-0aP"/>
+                            <action selector="alertSwitchValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="r01-IF-dgE"/>
                         </connections>
                     </switch>
                 </subviews>

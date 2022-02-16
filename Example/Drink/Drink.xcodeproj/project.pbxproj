@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		45234AB327BC18B500CE5539 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45234AB227BC18B500CE5539 /* Alert.swift */; };
 		45234AB527BC1D6F00CE5539 /* AddAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45234AB427BC1D6F00CE5539 /* AddAlertViewController.swift */; };
+		45234AB727BCE4A400CE5539 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45234AB627BCE4A400CE5539 /* Main.storyboard */; };
 		454C0A2627B9F70800143482 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C0A2527B9F70800143482 /* AppDelegate.swift */; };
 		454C0A2827B9F70800143482 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454C0A2727B9F70800143482 /* SceneDelegate.swift */; };
 		454C0A2F27B9F70900143482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 454C0A2E27B9F70900143482 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		45234AB227BC18B500CE5539 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		45234AB427BC1D6F00CE5539 /* AddAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlertViewController.swift; sourceTree = "<group>"; };
+		45234AB627BCE4A400CE5539 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		454C0A2227B9F70800143482 /* Drink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		454C0A2527B9F70800143482 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		454C0A2727B9F70800143482 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,11 +69,12 @@
 				454C0A3B27BC15ED00143482 /* AlertListCell.swift */,
 				454C0A3C27BC15ED00143482 /* AlertListCell.xib */,
 				454C0A3927B9F75000143482 /* AlertListViewController.swift */,
+				45234AB427BC1D6F00CE5539 /* AddAlertViewController.swift */,
+				45234AB627BCE4A400CE5539 /* Main.storyboard */,
 				45234AB227BC18B500CE5539 /* Alert.swift */,
 				454C0A2E27B9F70900143482 /* Assets.xcassets */,
 				454C0A3027B9F70900143482 /* LaunchScreen.storyboard */,
 				454C0A3327B9F70900143482 /* Info.plist */,
-				45234AB427BC1D6F00CE5539 /* AddAlertViewController.swift */,
 			);
 			path = Drink;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 				454C0A3227B9F70900143482 /* LaunchScreen.storyboard in Resources */,
 				454C0A2F27B9F70900143482 /* Assets.xcassets in Resources */,
 				454C0A3E27BC15ED00143482 /* AlertListCell.xib in Resources */,
+				45234AB727BCE4A400CE5539 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
