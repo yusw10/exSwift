@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AlertListCell: UITableViewCell {
 
@@ -13,6 +14,8 @@ class AlertListCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var alertSwitch: UISwitch!
+    
+    let userNotificaionCenter = UNUserNotificationCenter.current()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +33,12 @@ class AlertListCell: UITableViewCell {
               var alerts = try? PropertyListDecoder().decode([Alert].self, from: data) else { return }
         alerts[sender.tag].isOn = sender.isOn
         UserDefaults.standard.set(try? PropertyListEncoder().encode(alerts), forKey: "alerts")
+        
+        if sender.isOn{
+            userNotificaionCenter.addNotificationRequest(by: alerts[sender.tag])
+        }else{
+            userNotificaionCenter.removePendingNotificationRequests(withIdentifiers: [alerts[sender.tag].id])
+        }
     }
     
 }
