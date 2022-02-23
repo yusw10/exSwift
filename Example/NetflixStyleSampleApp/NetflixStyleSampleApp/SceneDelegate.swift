@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  NetflixStyleSampleApp
+//  NetflixStyleCollectionViewSampleApp
 //
-//  Created by 유한석 on 2022/02/21.
+//  Created by Bo-Young PARK on 2021/07/27.
 //
 
 import UIKit
@@ -11,15 +11,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = scene as? UIWindowScene else {
-            return
-        }
+        guard let windowScene = scene as? UIWindowScene else { return }
         self.window = UIWindow(windowScene: windowScene)
         
         let layout = UICollectionViewFlowLayout()
-        let homeViewController  = HomeViewController(collectionViewLayout: layout)
+        let homeViewController = HomeViewController(collectionViewLayout: layout)
         let rootNavigationController = UINavigationController(rootViewController: homeViewController)
         
         self.window?.rootViewController = rootNavigationController

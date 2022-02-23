@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  NetflixStyleSampleApp
+//  NetflixStyleCollectionViewSampleApp
 //
-//  Created by 유한석 on 2022/02/21.
+//  Created by Bo-Young PARK on 2021/07/27.
 //
 
 import UIKit
