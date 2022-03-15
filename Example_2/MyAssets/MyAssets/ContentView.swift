@@ -17,8 +17,9 @@ struct ContentView: View {
     }
     var body: some View {
         
-        TabView(selection: $selection, content: {
-            Color.white.tabItem{
+        
+        TabView(selection: $selection){
+            AssetView().tabItem{
                 Image(systemName: "dollarsign.circle.fill")
                 Text("자산")
             }.tag(Tab.asset)
@@ -40,7 +41,7 @@ struct ContentView: View {
                     Image(systemName: "gearshape.fill")
                     Text("설정")
                 }.tag(Tab.setting)
-        })
+        }
         
         
         
