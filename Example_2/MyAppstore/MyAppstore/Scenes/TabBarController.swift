@@ -23,7 +23,8 @@ class TabBarController: UITabBarController {
         return viewController
     }()
     private lazy var appViewController: UIViewController = {
-        let viewController = UIViewController()
+        
+        let viewController = UINavigationController(rootViewController: AppViewController())
         //탭바에 대한 정보 구성
         let uiTabBatItem = UITabBarItem(
             title: "앱",
