@@ -8,7 +8,7 @@
 import SnapKit
 import UIKit
 import Then
-
+import Kingfisher
 
 final class FeatureSectionViewCell: UICollectionViewCell{
     private var typeLabel = UILabel().then{ make in
@@ -32,7 +32,6 @@ final class FeatureSectionViewCell: UICollectionViewCell{
         let label = UILabel()
         label.font = .systemFont(ofSize: 14.0, weight: .semibold)
         label.textColor = UIColor.secondaryLabel
-        
         return label
     }()
     
@@ -42,19 +41,21 @@ final class FeatureSectionViewCell: UICollectionViewCell{
         imageView.layer.borderWidth = 0.5
         imageView.layer.borderColor = UIColor.separator.cgColor
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = .systemBlue
         return imageView
     }()
     
     
-    func setupCell(){
+    func setupCell(feature: Feature){
         [typeLabel, appNameLabel, descriptionLabel, imageView].forEach { make in
             addSubview(make)
         }
-        typeLabel.text = "새로운 경험"
-        appNameLabel.text = "Game Friends"
-        descriptionLabel.text = "을기을긱릭르이"
-
+        typeLabel.text = feature.type
+        appNameLabel.text = feature.appName
+        descriptionLabel.text = feature.description
+        
+        
         typeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
@@ -65,13 +66,21 @@ final class FeatureSectionViewCell: UICollectionViewCell{
             make.top.equalTo(typeLabel.snp.bottom)
         }
         descriptionLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(typeLabel.snp.leading)
+            make.leading.equalTo(typeLabel.snp.leading)
             make.top.equalTo(appNameLabel.snp.bottom).offset(4)
         }
         imageView.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(typeLabel.snp.leading)
+            make.leading.equalTo(typeLabel.snp.leading)
+            make.trailing.equalToSuperview()
             make.top.equalTo(descriptionLabel.snp.bottom).offset(8)
-            make.bottom.equalToSuperview().inset(8.0)
+            make.bottom.equalToSuperview().inset(16.0)
+        }
+        
+        //kingfisher
+        if let imageURL = URL(string: feature.imageURL){
+            imageView.kf.setImage(
+                with: imageURL
+            )
         }
     }
 }

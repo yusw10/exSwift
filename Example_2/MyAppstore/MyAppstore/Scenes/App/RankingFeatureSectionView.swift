@@ -10,6 +10,7 @@ import UIKit
 import Then
 
 final class RankingFeatureSectionView: UIView {
+    private var rankingFeatureList: [RankingFeature] = []
     
     private var titleLabel = UILabel().then{ make in
         make.font = .systemFont(ofSize: 18, weight: .black)
@@ -42,6 +43,7 @@ final class RankingFeatureSectionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        fetchData()
     }
     
     required init?(coder: NSCoder) {
@@ -52,11 +54,12 @@ final class RankingFeatureSectionView: UIView {
 
 extension RankingFeatureSectionView: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return rankingFeatureList.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingFeatureSectionViewCell", for: indexPath) as? RankingFeatureSectionViewCell else { return UICollectionViewCell()}
-        cell.setup()
+        let rankingFeature = rankingFeatureList[indexPath.item]
+        cell.setup(rankingFeature: rankingFeature)
         
         return cell
     }
@@ -95,6 +98,17 @@ private extension RankingFeatureSectionView{
         seperator.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalTo(collectionView.snp.bottom).offset(16)
+        }
+    }
+    
+    func fetchData(){
+        guard let url = Bundle.main.url(forResource: "RankingFeature", withExtension: "plist") else { return }
+        do{
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([RankingFeature].self, from: data)
+            rankingFeatureList = result
+        }catch{
+            print("FETCH ERROR : fetching error - ranking feature data ")
         }
     }
 }

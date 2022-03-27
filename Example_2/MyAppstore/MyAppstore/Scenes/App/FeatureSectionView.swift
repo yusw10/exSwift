@@ -2,6 +2,8 @@ import SnapKit
 import UIKit
 
 final class FeatureSectionView: UIView{
+    private var featureList: [Feature]
+    
     private lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -24,9 +26,10 @@ final class FeatureSectionView: UIView{
     private let seperator = SeperatorView(frame: .zero)
     
     override init(frame: CGRect) {
+        featureList = []
         super.init(frame: frame)
-        
         setupViews()
+        fetchData()
     }
     
     required init?(coder: NSCoder) {
@@ -38,13 +41,14 @@ final class FeatureSectionView: UIView{
 extension FeatureSectionView: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeatureSectionViewCell", for: indexPath) as? FeatureSectionViewCell else { return UICollectionViewCell()}
-        cell.setupCell()
+        let feature = featureList[indexPath.item]
+        cell.setupCell(feature: feature)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return featureList.count
     }
 }
 
@@ -76,5 +80,19 @@ private extension FeatureSectionView{
             make.height.equalTo(0.5)
             make.bottom.equalToSuperview()
         }
+    }
+    
+    func fetchData(){
+        guard let url = Bundle.main.url(forResource: "Feature", withExtension: "plist") else { return }
+        do{
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Feature].self, from: data)
+            featureList = result
+            print("completion rankingFeature list fetching")
+
+        }catch{
+            print("FETCH DATA ERROR : ranking feature data fetching error")
+        }
+                
     }
 }

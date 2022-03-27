@@ -7,10 +7,12 @@
 
 import UIKit
 import SnapKit // autolayout framework
-
+import Foundation
 
 //가장 최상위 뷰컨이라 final
 final class TodayViewController: UIViewController {
+    private var todayList: [Today] = []
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -32,6 +34,8 @@ final class TodayViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        fetchData()
+        print("@@@TODAY LIST COUNT : \(todayList.count)")
     }
 }
 
@@ -39,12 +43,13 @@ final class TodayViewController: UIViewController {
 extension TodayViewController: UICollectionViewDataSource{
     //몇개가 보여질건지
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return todayList.count
     }
     //무슨 셀 타입을 반환?
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "todayCell", for: indexPath) as? TodayCollectionViewCell
-        cell?.setup()
+        let today = todayList[indexPath.item]
+        cell?.setup(today: today)
         return cell ?? UICollectionViewCell()
     }
     
@@ -80,8 +85,26 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout{
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = AppDetailViewController()
+        let today = todayList[indexPath.item]
+        let vc = AppDetailViewController(today:today)
         present(vc, animated: true, completion: nil)
     }
 }
 
+private extension TodayViewController {
+    func fetchData() {
+        guard let url = Bundle.main.url(forResource: "Today", withExtension: "plist") else {
+            print("url metching fail")
+            return
+        }
+
+      
+        do {
+            let data = try Data(contentsOf: url)
+            print("data: \(data.count)")
+            let result = try PropertyListDecoder().decode([Today].self, from: data)
+            todayList = result
+            print("completion Today list fetching")
+        } catch {}
+    }
+}

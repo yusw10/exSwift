@@ -8,6 +8,7 @@
 import SnapKit
 import Then
 import UIKit
+import Kingfisher
 
 final class RankingFeatureSectionViewCell: UICollectionViewCell{
     static var height: CGFloat = 70.0
@@ -39,11 +40,11 @@ final class RankingFeatureSectionViewCell: UICollectionViewCell{
         make.text = "앱 내 구입"
     }
     
-    func setup(){
+    func setup(rankingFeature: RankingFeature){
         setupCell()
-        titleLabel.text = "테스트 타이틀"
-        descriptionLabel.text = "테스트 디스크립션"
-        inAppPurchaseInfoLabel.isHidden = false
+        titleLabel.text = rankingFeature.title
+        descriptionLabel.text = rankingFeature.description
+        inAppPurchaseInfoLabel.isHidden = !rankingFeature.isInPurchaseApp
     }
 }
 

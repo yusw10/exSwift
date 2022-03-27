@@ -4,6 +4,8 @@ import Then
 import UIKit
 
 final class AppDetailViewController: UIViewController {
+    private let today: Today
+    
     private var appIconImageView = UIImageView().then{ make in
         make.contentMode = .scaleAspectFit
         make.clipsToBounds = true
@@ -29,14 +31,23 @@ final class AppDetailViewController: UIViewController {
         make.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         make.tintColor = .systemBlue
     }
+    init(today: Today){
+        self.today = today
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupViews()
         
         appIconImageView.backgroundColor = .lightGray
-        titleLabel.text = "타이틀"
-        subTitleLabel.text = "asdasdasdasdasd"
+        titleLabel.text = today.title
+        subTitleLabel.text = today.subTitle
     }
 }
 //MARK: Private
