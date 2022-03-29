@@ -30,6 +30,24 @@ final class AppDetailViewController: UIViewController {
     private var shareButton = UIButton().then{ make in
         make.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         make.tintColor = .systemBlue
+        /*
+         버튼 작동 코드
+         1. 버튼이 작동하기 위해서는 액션을 지정해주어야 하는데 이는 objective c 변환 가능한 함수를 만들어 줘야한다
+          - @objc 어노테이션이 붙은 함수를 지정
+         2. UiActivityViewController를 만들어 지정해준다.
+          -
+        */
+        make.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
+        
+        
+    }
+    @objc func didTapShareButton(){
+        let activityItems: [Any] = [today.title]
+        let activityController = UIActivityViewController(
+            activityItems: activityItems,
+            applicationActivities: nil
+        )
+        self.present(activityController, animated: true, completion: nil)
     }
     init(today: Today){
         self.today = today
